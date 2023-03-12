@@ -1,0 +1,27 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = false
+name = "pypi"
+
+[packages]
+apache-airflow = "*"
+
+[dev-packages]
+flake8 = "==3.9.2"
+delta-spark = "==1.0.0"
+pytest = "==6.2.4"
+databricks-cli = "==0.14.3"
+
+[requires]
+python_version = "3.9"
+
+[pipenv]
+allow_prereleases = true
+
+[scripts]
+setup = "bash ./scripts/setup.sh"
+test = "bash ./scripts/test.sh"
+package = "bash ./scripts/package.sh"
+deploy = "bash ./scripts/deploy.sh"
+git-push = "bash ./scripts/git-push.sh"
+lint = "flake8"
